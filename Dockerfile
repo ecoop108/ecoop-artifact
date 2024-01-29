@@ -7,8 +7,12 @@ RUN git clone https://github.com/ecoop108/vpy
 # Copy examples to default workspace
 RUN mv ./vpy/examples /config/workspace
 
+# Copy run configuration file to workspace
+RUN mkdir /config/workspace/.vscode
+COPY launch.json /config/workspace/.vscode/launch.json
+
 # Fix permissions
-RUN chown abc:abc /config/workspace/*
+RUN chown abc:abc -R /config/workspace
 
 # Install python and pip
 RUN apt update
@@ -24,7 +28,8 @@ RUN git clone https://github.com/ecoop108/vpy-vscode-ext
 RUN curl -fsSL https://deb.nodesource.com/setup_21.x | bash - && apt install -y nodejs
 
 # Install dependencies to build vscode extension 
-RUN npm install -g @vscode/vsce @types/vscode @types/watch typescript
+RUN --mount=type=cache,target=/root/.cache \
+    npm install -g @vscode/vsce @types/vscode @types/watch typescript
 
 # Build extension 
 WORKDIR /vpy-vscode-ext
@@ -33,3 +38,6 @@ RUN vsce package
 
 # Install extension in vscode
 RUN /app/code-server/bin/code-server --extensions-dir /config/extensions --install-extension ./vpy-0.0.1.vsix
+
+# Install f5-anything extension to provide runtime integration
+RUN /app/code-server/bin/code-server --extensions-dir /config/extensions --install-extension ms-python.python
