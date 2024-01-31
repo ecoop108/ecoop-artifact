@@ -58,10 +58,6 @@ Error reporting is not (yet) integrated into the extension. If you write a progr
 vpy -i <file> -t <target>
 ```
 
-In the terminal you are able to see the errors.
+To run the client code of the current file (e.g. function `main` in file `name.py`), open the **Run & Debug** browser on the left sidebar and select the **Python: Current File** run configuration, then press the green arrow.  
 
-To run the client code (e.g. function `main` in file `name.py`), use the standard python interpreter:
-
-```bash
-python3.11 name.py
-```
+![Run configuration](./resources/run.png)
