@@ -1,5 +1,5 @@
 # Base image with vscode frontend for web browser
-FROM linuxserver/code-server
+FROM linuxserver/code-server:4.21.0
 
 # Clone repository with compiler
 RUN git clone https://github.com/ecoop108/vpy
@@ -16,7 +16,7 @@ RUN chown abc:abc -R /config/workspace
 
 # Install python and pip
 RUN apt update
-RUN apt install -y python3.11 python3-pip
+RUN apt install -y python3.11 python3.11-dev python3-pip
 
 # Install vpy compiler to python PATH
 RUN python3.11 -m pip install ./vpy
