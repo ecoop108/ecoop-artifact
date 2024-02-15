@@ -19,16 +19,18 @@ git clone https://github.com/ecoop108/ecoop-artifact.git
 cd ecoop-artifact
 ```
 
-Build the Docker image:
+**Optional**: build the Docker image:
 
 ```bash
-docker build -t vpy:latest .
+docker build -t ecoop108/vpy:latest .
 ```
+
+Alternatively, you can pull the image from DockerHub (`ecoop108/vpy:latest`).
 
 Run the Docker image and bind port `8443` of the container to an available port (e.g. `8080`) on your machine:
 
 ```bash
-docker run -p 0.0.0.0:8080:8443 vpy:latest
+docker run -p 0.0.0.0:8080:8443 ecoop108/vpy:latest
 ```
 
 ## Usage
