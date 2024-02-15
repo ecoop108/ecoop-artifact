@@ -1,15 +1,12 @@
-# Artifact for a Language-based version control system
+# Artifact for a Language-Based Version Control System
 
-This repository provides the artifact for our submission to Ecoop 2024 titled "A Language-Based Version Control System". It contains a compiler and a VS-Code extension to manage versioned programs.
+Please answer the following questions concisely, either with bullet lists or short paragraphs.
 
-## Table of Contents
+Title of the submitted paper: A Language-Based Version Control System
+ECOOP submission number for the paper: 108
 
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
 
-## Getting started
+## Quick-start guide (Kick-the-tires phase)
 
 ### Prerequisites
 You should have Docker installed on your machine and at least 2GB of free space.
@@ -61,3 +58,34 @@ vpy -i <file> -t <target>
 To run the client code of the current file (e.g. function `main` in file `name.py`), open the **Run & Debug** browser on the left sidebar and select the **Python: Current File** run configuration, then press the green arrow.  
 
 ![Run configuration](./resources/run.png)
+
+
+## Overview: What does the artifact comprise?
+
+- Compiler for versioned python programs
+  - Codebase is at `/vpy` in the container.
+- Extensions for managing versioned programs
+  - Accessible through the left-side panel, as described earlier.
+
+
+## For authors claiming an available badge
+
+We agree to publish this under a Creative Commons license.
+
+## For authors claiming a functional or reusable badge
+
+The examples, which are available in the default workspace in the web editor, reproduce the claims in the paper.
+
+Each example file has instructions on how to reproduce the claims in the paper.
+
+The examples are self-contained, but action is needed to reproduce the errors/results (e.g. run the compiler). In some cases, the reviewer might want to make manual changes to test out the results. This should be easy to follow from the paper.
+
+## For authors claiming a reusable badge
+
+The implementation is open source and available on GitHub.
+
+The project follows the `pyproject.toml` build system. To install, run with:
+
+~~~bash
+pip install <repository>
+~~~
