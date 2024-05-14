@@ -1,9 +1,8 @@
 # Artifact for a Language-Based Version Control System
 
-Please answer the following questions concisely, either with bullet lists or short paragraphs.
+**Title of the submitted paper**: A Language-Based Version Control System
 
-Title of the submitted paper: A Language-Based Version Control System
-ECOOP submission number for the paper: 108
+**ECOOP submission number for the paper**: 84
 
 
 ## Quick-start guide
